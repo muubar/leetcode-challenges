@@ -9,9 +9,3 @@ var removeDuplicates = function (nums) {
   }
   return nums.length;
 };
-
-
-/*
-to be honest this isn't something that i would ever do in a real project, i didn't spend weeks studying functional programming
-so that i wind up mutating arguments in-place   
-*/
