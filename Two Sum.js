@@ -9,6 +9,3 @@ var twoSum = function (nums, target) {
     else obj[first] = i;
   }
 };
-
-
-console.log(twoSum([3, 3], 6));
