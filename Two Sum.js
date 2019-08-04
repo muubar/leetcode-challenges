@@ -1,11 +1,11 @@
 var twoSum = function (nums, target) {
-  let obj = {};
+  var map = new Map();
+  nums.forEach((val, i) => map.set(val, i));
+
   for (let i = 0; i < nums.length; i++) {
-    const first = nums[i];
-    const left = target - first;
-    if (obj[left] !== undefined) {
-      return [i, obj[left]];
-    }
-    else obj[first] = i;
+    if (map.has(target - nums[i]) && i !== map.get(target - nums[i])) return [i, map.get(target - nums[i])];
   }
 };
+
+
+
