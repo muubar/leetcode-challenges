@@ -1,13 +1,12 @@
 var firstUniqChar = function (s) {
-    let result = -1;
-    s.split("").some((char, idx) => {
-        let first = s.indexOf(char);
-        let last = s.lastIndexOf(char)
-        if (first === last) {
-            result = idx;
-            return true;
-        }
-        return false;
+    var map = new Map();
+    s.split("").forEach((val) => {
+        if (map.has(val)) map.set(val, false);
+        else map.set(val, true);
     })
-    return result;
+
+    for (let i = 0; i < s.length; i++) {
+        if (map.get(s[i])) return i;
+    }
+    return -1
 };
